@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sask AI and ML Solutions – AI for Saskatchewan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Practical AI and machine learning solutions for government and organizations in Saskatchewan." />
+
+  <style>
+    :root {
+      --primary: #0b6fbf;
+      --primary-light: #e6f2fb;
+      --dark: #1f2933;
+      --text: #374151;
+      --bg: #f5f7fa;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ===== Header ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 96px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 12px;              /* smaller padding so logo is closer to left */
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* logo left, nav middle, button right */
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 260px; /* helps keep header layout stable */
+    }
+
+    .site-logo {
+      height: 80px;   /* BIG logo */
+      width: auto;
+      display: block;
+    }
+
+    .brand-text {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--dark);
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    nav a {
+      font-size: 0.95rem;
+      color: #4b5563;
+      text-decoration: none;
+    }
+
+    nav a:hover { color: var(--primary); }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: white;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      background: transparent;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .btn-outline:hover { background: var(--primary-light); }
+
+    /* ===== Hero ===== */
+    .hero {
+      background: linear-gradient(135deg, #e6f2fb, #f9fafb);
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 3.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.8fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 2.3rem;
+      color: var(--dark);
+      margin: 0 0 1rem;
+    }
+
+    section { padding: 3rem 1.25rem; }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+
+    .grid-3, .grid-2 {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+    .card {
+      background: var(--white);
+      border-radius: 0.9rem;
+      padding: 1.4rem;
+      border: 1px solid #e5e7eb;
+    }
+
+    textarea, input {
+      width: 100%;
+      padding: 0.6rem;
+      border-radius: 0.4rem;
+      border: 1px solid #d1d5db;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      border-top: 1px solid #e5e7eb;
+      background: #f9fafb;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.25rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+
+      nav { display: none; } /* simple mobile header */
+      .logo { min-width: 0; }
+      .brand-text { white-space: normal; }
+      .site-logo { height: 72px; }
+      header { height: 92px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="logo">
+      <!-- Put logo_icon_transparent.png in same folder as index.html -->
+      <img src="logo_icon_transparent.png" alt="Sask AI and ML Solutions" class="site-logo">
+      <span class="brand-text">Sask AI and ML Solutions</span>
+    </div>
+
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="btn-outline">Free Consultation</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div>
+        <h1>Practical, Responsible AI for Saskatchewan Organizations</h1>
+        <p>
+          We help Saskatchewan ministries, crown corporations, municipalities, and businesses
+          automate documents, improve workflows, and turn data into decisions using
+          secure, Canada-hosted AI solutions.
+        </p>
+        <a href="#contact" class="btn-primary">Book a free consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-inner">
+      <h2 class="section-title">Services</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Document & Text Automation</h3>
+          <p>Turn PDFs, forms, and reports into structured, usable data automatically.</p>
+        </div>
+        <div class="card">
+          <h3>AI Chatbots</h3>
+          <p>24/7 chat assistants trained on your policies and FAQ documents.</p>
+        </div>
+        <div class="card">
+          <h3>Predictive Analytics</h3>
+          <p>Machine learning models to forecast demand, workload, and trends.</p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:1.5rem;">
+        <div class="card">
+          <h3>AI Ethics & Bias Reviews</h3>
+          <p>Ensure fairness, transparency, and privacy in AI systems.</p>
+        </div>
+        <div class="card">
+          <h3>Custom AI Projects</h3>
+          <p>We work with you to design and deploy solutions tailored to your needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-us">
+    <div class="section-inner">
+      <h2 class="section-title">Why Choose Us</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Based in Saskatchewan</h3>
+          <p>We understand local government, crown corps, privacy rules, and workflows.</p>
+        </div>
+        <div class="card">
+          <h3>Public Sector Experience</h3>
+          <p>Strong background in machine learning and automation for government data.</p>
+        </div>
+        <div class="card">
+          <h3>Responsible AI</h3>
+          <p>We prioritize transparency, fairness, and security in all deployments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-inner">
+      <h2 class="section-title">About</h2>
+      <p>
+        We are an experienced team with a strong background delivering data science and AI solutions within
+        government and public-sector environments. Our core capabilities include analytics, predictive and statistical models,
+        generative AI, and large language models (LLMs).
+
+        We work extensively with natural language processing (NLP), document understanding,
+        and automated summarization, helping organizations modernize business workflows and extract value
+        from unstructured data while maintaining privacy and governance standards.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-inner">
+      <h2 class="section-title">Contact Us</h2>
+      <p>Email: <strong>saskmlai@outlook.com</strong></p>
+      <!-- <p>Phone: <strong>639-999-7817</strong></p> -->
+      <p>Location: Regina, Saskatchewan</p>
+
+      <form action="mailto:saskmlai@outlook.com" method="POST" enctype="text/plain" style="margin-top:1rem; max-width:500px;">
+        <label>Name</label>
+        <input type="text" name="Name" required />
+
+        <label>Email</label>
+        <input type="email" name="Email" required />
+
+        <label>Message</label>
+        <textarea name="Message" required></textarea>
+
+        <button class="btn-primary" type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    © 2025 Sask AI and ML Solutions. All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>
